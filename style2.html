@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font: 100% Verdana;
+            margin: 20px;
+            line-height: 26px;
+        }
+
+        .wapper {
+            position: relative;
+            overflow: auto;
+        }
+        
+        #right {
+            background-color: #f1f1f1;
+            border: 1px solid #d4d4d4;
+            padding-left: 10px;
+        }
+
+        #bottom {
+            text-align: center;
+            padding: 10px;
+            font-size: 70%;
+            line-height: 14p;
+        }
+
+        h1, h2, h3 {
+            color: #4CAF50;
+        }
+
+        #left {
+            padding: 0;
+            position: relative;
+            overflow: auto;
+        }
+
+        .menuitem {
+            width: 165px;
+            float: left;
+            background-color: #555555;
+            color: white;
+            margin: 4px;
+            padding: 2px;
+            text-align: center;
+            cursor: pointer;
+            list-style-type: none;
+        }
+
+        .menuitem:nth-child(3){
+            background-color: #04AA6D;
+        }
+
+        .menuitem:hover{
+            background-color: #000;
+        }
+
+    </style>
+    <style>/*stylesheet 2*/</style>
+    <style>/*stylesheet 3*/</style>
+    <style>/*stylesheet 4*/</style>
+</head>
+
+<body>
+    <div class = "container wrapper">
+        <div id="top">
+            <h1>Welcome to 22100228(Kim hajin)'s Homepage</h1>
+            <p>Use the menu to select different Stylesheets</p>
+        </div>
+        <div class="middle">
+            <div id="left">
+                <ul id = "stylelist">
+                    <li class="menuitem" onclick="reStyle(0)">Stylesheet 1</li>
+                    <li class="menuitem" onclick="reStyle(1)">Stylesheet 2</li>
+                    <li class="menuitem" onclick="reStyle(2)">Stylesheet 3</li>
+                    <li class="menuitem" onclick="reStyle(3)">Stylesheet 4</li>
+                    <li class="menuitem" onclick="noStyles()">No Stylesheet</li>
+                </ul>
+            </div>
+            <div id = "main">
+                <h1>Same Page Different Stylesheets</h1>
+                <p>This is a demonstration of how different stylesheets can change the layout 
+                    of your HTML page. You can change the layout of this page by selecting different 
+                    stylesheets in the menu, or by selecting one of the following links:
+                    <br>
+                    <a href="#" onclick = "reStyle(0);return false"> Stylesheet1</a>
+                    , 
+                    <a href="#" onclick = "reStyle(1);return false"> Stylesheet2</a>
+                    , 
+                    <a href="#" onclick = "reStyle(2);return false"> Stylesheet3</a>
+                    , 
+                    <a href="#" onclick = "reStyle(3);return false"> Stylesheet4</a>
+                    . 
+                </p>
+                <h2>No Styles</h2>
+                <p>This page uses DIV elements to group different sections of the HTML page. 
+                    Click here to see how the page looks like with no stylesheet:
+                    <br>
+                    <a href="#" onclick = "noStyles();return false"> No Stylesheet</a>
+                    .
+                </p>
+            </div>
+            <div id="right">
+                <h3>Side-Bar</h3>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+            </div>
+        </div>
+        <div id = bottom>
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</p>
+        </div>
+    </div>
+        <script>
+            function noStyles() {
+                document.styleSheets[0].disabled = true;
+                document.styleSheets[1].disabled = true;
+                document.styleSheets[2].disabled = true;
+                document.styleSheets[3].disabled = true;
+            }
+
+            function reStyle(n) {
+                noStyles()
+                document.styleSheets[n].disabled = false;
+            }
+
+            reStyle(0);
+</script>
+</body>
+</html>
