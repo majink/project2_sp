@@ -6,6 +6,39 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <h2>HTML Forms</h2>
+
+    <p>사용자 정보 입력</p>
+
+    <form action="form_ok.php" method="post">
+        <label for="uname"><span>*</span>이름:</label><br>
+        <input type="text" id = "uname" name="uname" placeholder="이름을 입력" required><br>
+
+        <label for="pwd"><span>*</span>비밀번호:</label>
+        <input type="password" id="pwd" name="pwd" placeholder="4자 이상 입력" required><br>
+
+        <label for="genderl">성별:</label>
+        <input type="radio" id="genderl" name="gender" value="M" checked>남 
+        <input type="radio" id="radio" name="gender" value="W">여<br>
+
+        <label for="favor">관심분야:</label>
+        <input type="checkbox" id="favor" name="favor1" value="1" checked>AI
+        <input type="checkbox" id="favor" name="favor2" value="2">Front-end
+        <input type="checkbox" id="favor" name="favor3" value="3">Back-end<br>
+        <select name="major">전공:
+            <option value="1">전산전자공학부</option>
+            <option value="2">기계제어공학부</option>
+            <option value="3">커뮤니케이션학부</option>
+            <option value="4">글로벌리더십학부</option>
+            <option value="5">콘텐츠융합디자인학부</option>
+            <option value="6">경영경제학부</option>
+        </select><br>
+
+        <label for="email">이메일:</label><br>
+        <input type="text" id = "email" name="email"><br>
+        <br>
+
+        <input type="submit" value="저장"> <input type="reset" value="취소">
+    </form>
 </body>
 </html>
