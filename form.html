@@ -8,9 +8,11 @@
 <body>
     <h2>HTML Forms</h2>
 
-    <p>사용자 정보 입력</p>
-
     <form action="form_ok.php" method="post">
+
+        <fieldset style="width: 300px; margin: 5px;">
+            <legend>개인 정보 입력</legend>
+
         <label for="uname"><span>*</span>이름:</label><br>
         <input type="text" id = "uname" name="uname" placeholder="이름을 입력" required><br>
 
@@ -34,10 +36,13 @@
             <option value="6">경영경제학부</option>
         </select><br>
 
-        <label for="email">이메일:</label><br>
-        <input type="text" id = "email" name="email"><br>
-        <br>
+        생일:<br>
+        <input type="date" min="1950-01-01" max="2020-12-31" name="fromdate"><br>
 
+        간단한 자기소개:<br>
+        <textarea name="context" id="introduce" cols="30" rows="5"></textarea>
+        <br>
+    </fieldset>
         <input type="submit" value="저장"> <input type="reset" value="취소">
     </form>
 </body>
