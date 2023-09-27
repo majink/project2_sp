@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>/*stylesheet 1*/</style>
     <style>
-        body {
+          body {
             font: 100% Verdana;
             margin: 20px;
             line-height: 26px;
@@ -58,9 +59,7 @@
         .menuitem:hover{
             background-color: #000;
         }
-
     </style>
-    <style>/*stylesheet 2*/</style>
     <style>/*stylesheet 3*/</style>
     <style>/*stylesheet 4*/</style>
 </head>
@@ -113,20 +112,20 @@
             <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</p>
         </div>
     </div>
-        <script>
-            function noStyles() {
-                document.styleSheets[0].disabled = true;
-                document.styleSheets[1].disabled = true;
-                document.styleSheets[2].disabled = true;
-                document.styleSheets[3].disabled = true;
-            }
+    <script>
+        function noStyles() {
+            document.styleSheets[0].disabled = true;
+            document.styleSheets[1].disabled = true;
+            document.styleSheets[2].disabled = true;
+            document.styleSheets[3].disabled = true;
+        }
+        
+        function reStyle(n) {
+            noStyles()
+            document.styleSheets[n].disabled = false;
+        }
 
-            function reStyle(n) {
-                noStyles()
-                document.styleSheets[n].disabled = false;
-            }
-
-            reStyle(0);
-</script>
+        reStyle(0);
+        </script>
 </body>
 </html>

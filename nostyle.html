@@ -4,8 +4,148 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>/*stylesheet 1*/</style>
-    <style>/*stylesheet 2*/</style>
+    <style>
+        body{
+            font : 100% Lucida Sans, Verdana;
+            margin : 20px;
+            line-height: 26px;
+        }
+
+        .wrapper {
+            position: relative;
+            overflow: auto;
+        }
+
+        #top, #right, #bottom, .menuitem{
+            border-radius: 4px;
+            margin: 4px;
+        }
+        #top {
+            background-color: #04AA6D;
+            color: white;
+            padding: 15px;
+        }
+        #main {
+            padding: 10px;
+            margin: 0 210px;
+        }
+        #left{
+            width: 200px;
+            float: left;
+        }
+        #right {
+            background-color: #32a4e7;
+            color: white;
+            padding: 10px;
+            width: 180px;
+            bottom: 100px;
+            top: 90px;
+            right: 0px;
+            position: absolute;
+        }
+        #bottom {
+            border: 1px solid #d4d4d4;
+            background-color:  #f1f1f1;
+            text-align: center;
+            padding: 10px;
+            line-height: 14px;
+            font-size: 70%;
+        }
+        #top h1, #top p, #stylelist {
+            margin: 0;
+            padding: 0;
+        }
+        .menuitem {
+            background-color: #f1f1f1;
+            border: 1px solid #d4d4d4;
+            padding: 2px;
+            list-style-type: none;
+            cursor : pointer;
+        }
+        .menuitem:hover{
+            background-color: white;
+        }
+        .menuitem:first-child{
+            background-color: #04AA6D;
+            color: white;
+            font-weight: bold;
+        }
+
+        @media (max-width : 800px){
+            #right {
+                width: auto;
+                position: relative;
+            }
+            #main {
+                margin-right: 0;
+            }
+        }
+
+        @media (max-width : 600px){
+            #left{
+                width: auto;
+                float: none;
+            }
+            #main {
+                margin: 0;
+            }
+        }
+    </style>
+    <style>
+          body {
+            font: 100% Verdana;
+            margin: 20px;
+            line-height: 26px;
+        }
+
+        .wapper {
+            position: relative;
+            overflow: auto;
+        }
+        
+        #right {
+            background-color: #f1f1f1;
+            border: 1px solid #d4d4d4;
+            padding-left: 10px;
+        }
+
+        #bottom {
+            text-align: center;
+            padding: 10px;
+            font-size: 70%;
+            line-height: 14p;
+        }
+
+        h1, h2, h3 {
+            color: #4CAF50;
+        }
+
+        #left {
+            padding: 0;
+            position: relative;
+            overflow: auto;
+        }
+
+        .menuitem {
+            width: 165px;
+            float: left;
+            background-color: #555555;
+            color: white;
+            margin: 4px;
+            padding: 2px;
+            text-align: center;
+            cursor: pointer;
+            list-style-type: none;
+        }
+
+        .menuitem:nth-child(2){
+            background-color: #04AA6D;
+        }
+
+        .menuitem:hover{
+            background-color: #000;
+        }
+    </style>
     <style>/*stylesheet 3*/</style>
     <style>/*stylesheet 4*/</style>
 </head>
@@ -19,11 +159,11 @@
         <div class="middle">
             <div id="left">
                 <ul id = "stylelist">
-                    <li>Stylesheet 1</li>
-                    <li>Stylesheet 2</li>
-                    <li>Stylesheet 3</li>
-                    <li>Stylesheet 4</li>
-                    <li>No Stylesheet</li>
+                    <li class="menuitem" onclick="reStyle(0)">Stylesheet 1</li>
+                    <li class="menuitem" onclick="reStyle(1)">Stylesheet 2</li>
+                    <li class="menuitem" onclick="reStyle(2)">Stylesheet 3</li>
+                    <li class="menuitem" onclick="reStyle(3)">Stylesheet 4</li>
+                    <li class="menuitem" onclick="noStyles()">No Stylesheet</li>
                 </ul>
             </div>
             <div id = "main">
@@ -58,20 +198,20 @@
             <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</p>
         </div>
     </div>
-        <script>
-            function noStyles() {
-                document.styleSheets[0].disabled = true;
-                document.styleSheets[1].disabled = true;
-                document.styleSheets[2].disabled = true;
-                document.styleSheets[3].disabled = true;
-            }
+    <script>
+        function noStyles() {
+            document.styleSheets[0].disabled = true;
+            document.styleSheets[1].disabled = true;
+            document.styleSheets[2].disabled = true;
+            document.styleSheets[3].disabled = true;
+        }
+        
+        function reStyle(n) {
+            noStyles()
+            document.styleSheets[n].disabled = false;
+        }
 
-            function reStyle(n) {
-                noStyles()
-                document.styleSheets[n].disabled = false;
-            }
-
-            reStyle(0);
-</script>
+        reStyle(0);
+        </script>
 </body>
 </html>
